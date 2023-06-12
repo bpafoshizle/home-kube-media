@@ -28,6 +28,7 @@ jobs:
     with:
       dockerfile: docker/readarr/Dockerfile
       platform: 'linux/amd64,linux/arm64'
+      build_dir: docker/readarr
     secrets:
       PACKAGE_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
 

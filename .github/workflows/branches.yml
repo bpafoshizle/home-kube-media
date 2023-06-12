@@ -29,6 +29,7 @@ jobs:
     with:
       dockerfile: docker/readarr/Dockerfile
       platform: 'linux/amd64,linux/arm64'
+      build_dir: docker/readarr
   
   call-build-docker-radarr:
     # Ensure lint job passes before building image.
