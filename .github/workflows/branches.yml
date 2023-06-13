@@ -1,0 +1,41 @@
+name: Branches
+
+# Run this workflow every time a new commit pushed to your repository
+on: 
+  push:
+    branches-ignore:
+      - main
+  
+  workflow_dispatch:
+
+jobs:
+  show-key-values:
+    name: show values of variables
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: run test command
+        run: |
+          echo github.event_name: ${{ github.event_name }}
+          echo github.ref: ${{ github.ref }}
+
+#   call-format-and-lint:
+#     uses: bpafoshizle/actions/.github/workflows/lint.yml@main
+  
+  call-build-docker-readarr:
+    # Ensure lint job passes before building image.
+    # needs: call-format-and-lint
+    uses: bpafoshizle/actions/.github/workflows/docker-build.yml@main
+    with:
+      dockerfile: docker/readarr/Dockerfile
+      platform: 'linux/amd64,linux/arm64'
+      build_dir: docker/readarr
+  
+  call-build-docker-radarr:
+    # Ensure lint job passes before building image.
+    # needs: call-format-and-lint
+    uses: bpafoshizle/actions/.github/workflows/docker-build.yml@main
+    with:
+      dockerfile: docker/radarr/Dockerfile
+      platform: 'linux/amd64,linux/arm64'
+      build_dir: docker/radarr

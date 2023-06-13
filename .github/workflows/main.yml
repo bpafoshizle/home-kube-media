@@ -23,10 +23,20 @@ jobs:
           echo github.event_name: ${{ github.event_name }}
           echo github.ref: ${{ github.ref }}
 
-  call-build-and-push:
+  call-build-and-push-readarr:
     uses: bpafoshizle/actions/.github/workflows/docker-build-push-ghcr.yml@main
     with:
-      dockerfile: Dockerfile.alpine
+      dockerfile: docker/readarr/Dockerfile
       platform: 'linux/amd64,linux/arm64'
+      build_dir: docker/readarr
+    secrets:
+      PACKAGE_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
+
+  call-build-and-push-radar:
+    uses: bpafoshizle/actions/.github/workflows/docker-build-push-ghcr.yml@main
+    with:
+      dockerfile: docker/radarr/Dockerfile
+      platform: 'linux/amd64,linux/arm64'
+      build_dir: docker/radarr
     secrets:
       PACKAGE_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
