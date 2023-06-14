@@ -29,7 +29,7 @@ jobs:
       dockerfile: docker/readarr/Dockerfile
       platform: 'linux/amd64,linux/arm64'
       build_dir: docker/readarr
-      image_id: home-kube-media_readarr
+      image_id: home-kube-media-readarr
     secrets:
       PACKAGE_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
 
@@ -39,6 +39,6 @@ jobs:
       dockerfile: docker/radarr/Dockerfile
       platform: 'linux/amd64,linux/arm64'
       build_dir: docker/radarr
-      image_id: home-kube-media_radarr
+      image_id: home-kube-media-radarr
     secrets:
       PACKAGE_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
