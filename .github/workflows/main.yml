@@ -42,3 +42,13 @@ jobs:
       image_id: bpafoshizle/home-kube-media/radarr
     secrets:
       PACKAGE_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
+
+  call-build-and-push-prowlarr:
+    uses: bpafoshizle/actions/.github/workflows/docker-build-push-ghcr.yml@main
+    with:
+      dockerfile: docker/prowlarr/Dockerfile
+      platform: 'linux/amd64,linux/arm64'
+      build_dir: docker/prowlarr
+      image_id: bpafoshizle/home-kube-media/prowlarr
+    secrets:
+      PACKAGE_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
