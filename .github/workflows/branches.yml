@@ -39,3 +39,12 @@ jobs:
       dockerfile: docker/radarr/Dockerfile
       platform: 'linux/amd64,linux/arm64'
       build_dir: docker/radarr
+
+  call-build-docker-prowlarr:
+    # Ensure lint job passes before building image.
+    # needs: call-format-and-lint
+    uses: bpafoshizle/actions/.github/workflows/docker-build.yml@main
+    with:
+      dockerfile: docker/prowlarr/Dockerfile
+      platform: 'linux/amd64,linux/arm64'
+      build_dir: docker/prowlarr
