@@ -2,12 +2,12 @@
 replicaCount: 1
 
 image:
-  repository: ghcr.io/bpafoshizle/docker-radarr
-  tag: master # ARM image
+  repository: ghcr.io/bpafoshizle/home-kube-media/radarr
+  tag: latest
   pullPolicy: Always
 
 imagePullSecrets:
-  - name: ghcr-docker-radarr # https://stackoverflow.com/questions/62901288/how-to-use-imagepullsecrets-in-helm-3
+  - name: ghcr-docker-home-kube-media # https://stackoverflow.com/questions/62901288/how-to-use-imagepullsecrets-in-helm-3
 
 env:
   - name: PUID

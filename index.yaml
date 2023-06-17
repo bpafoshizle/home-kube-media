@@ -3,7 +3,7 @@ entries:
   radarr:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2023-06-11T20:53:07.021361-05:00"
+    created: "2023-06-17T13:04:22.742768-05:00"
     description: Radarr - Automatic downloader for movies :)
     digest: cc9888841a157e40cd11af800ca23f35fddef09a79a8102708577387849d872f
     icon: https://bpafoshizle.github.io/home-kube-media/helm/charts/radarr/logo/radarr.png
@@ -11,4 +11,15 @@ entries:
     urls:
     - https://bpafoshizle.github.io/home-kube-media/radarr-0.1.0.tgz
     version: 0.1.0
-generated: "2023-06-11T20:53:07.017195-05:00"
+  readarr:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2023-06-17T13:04:22.743682-05:00"
+    description: Readarr - an ebook and audiobook collection manager
+    digest: 6a10233c662314962f0aec0a45a7aeadfe431fcb9c0ec6396d11aef04e6ebc51
+    icon: https://bpafoshizle.github.io/home-kube-media/helm/charts/readarr/logo/readarr.png
+    name: readarr
+    urls:
+    - https://bpafoshizle.github.io/home-kube-media/readarr-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-06-17T13:04:22.737199-05:00"
