@@ -41,10 +41,10 @@ spec:
           pathType: Prefix
         - backend:
             service:
-              name: "plex-kube-plex"
+              name: "readarr"
               port: 
-                number: 32400
-          path: "/"
+                number: 80
+          path: "/readarr"
           pathType: Prefix
 ---
 
