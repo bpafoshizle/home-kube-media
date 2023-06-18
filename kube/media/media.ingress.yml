@@ -46,5 +46,12 @@ spec:
                 number: 80
           path: "/readarr"
           pathType: Prefix
+        - backend:
+            service:
+              name: "prowlarr"
+              port: 
+                number: 80
+          path: "/prowlarr"
+          pathType: Prefix
 ---
 
