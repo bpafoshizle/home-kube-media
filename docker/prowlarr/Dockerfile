@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM ghcr.io/linuxserver/baseimage-alpine:arm64v8-3.17
+FROM lscr.io/linuxserver/prowlarr:arm64v8-1.8.6.3946-ls34
 
 # set version label
 ARG BUILD_DATE
