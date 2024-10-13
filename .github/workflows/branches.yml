@@ -22,23 +22,23 @@ jobs:
 #   call-format-and-lint:
 #     uses: bpafoshizle/actions/.github/workflows/lint.yml@main
   
-  call-build-docker-readarr:
-    # Ensure lint job passes before building image.
-    # needs: call-format-and-lint
-    uses: bpafoshizle/actions/.github/workflows/docker-build.yml@main
-    with:
-      dockerfile: docker/readarr/Dockerfile
-      platform: 'linux/amd64,linux/arm64'
-      build_dir: docker/readarr
-  
   call-build-docker-radarr:
     # Ensure lint job passes before building image.
     # needs: call-format-and-lint
     uses: bpafoshizle/actions/.github/workflows/docker-build.yml@main
     with:
       dockerfile: docker/radarr/Dockerfile
-      platform: 'linux/amd64,linux/arm64'
+      platform: 'linux/arm64'
       build_dir: docker/radarr
+
+  call-build-docker-sonarr:
+    # Ensure lint job passes before building image.
+    # needs: call-format-and-lint
+    uses: bpafoshizle/actions/.github/workflows/docker-build.yml@main
+    with:
+      dockerfile: docker/sonarr/Dockerfile
+      platform: 'linux/arm64'
+      build_dir: docker/sonarr
 
   call-build-docker-prowlarr:
     # Ensure lint job passes before building image.
@@ -46,5 +46,5 @@ jobs:
     uses: bpafoshizle/actions/.github/workflows/docker-build.yml@main
     with:
       dockerfile: docker/prowlarr/Dockerfile
-      platform: 'linux/amd64,linux/arm64'
+      platform: 'linux/arm64'
       build_dir: docker/prowlarr

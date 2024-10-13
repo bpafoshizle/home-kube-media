@@ -11,7 +11,7 @@ When building new charts you need to do the following:
 
 ```
 helm package helm/charts/radarr
-helm package helm/charts/readarr
+helm package helm/charts/sonarr
 helm package helm/charts/prowlarr
 helm repo index --url https://bpafoshizle.github.io/home-kube-media .
 ```

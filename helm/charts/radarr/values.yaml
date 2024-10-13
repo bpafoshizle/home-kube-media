@@ -1,10 +1,13 @@
-
+## media.radarr.values.yml
 replicaCount: 1
 
 image:
-  repository: linuxserver/radarr
+  repository: ghcr.io/bpafoshizle/home-kube-media/radarr
   tag: latest
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
+
+imagePullSecrets:
+  - name: ghcr-docker-home-kube-media # https://stackoverflow.com/questions/62901288/how-to-use-imagepullsecrets-in-helm-3
 
 env:
   - name: PUID
@@ -16,45 +19,19 @@ service:
   type: ClusterIP
   port: 80
 
-ingress:
-  enabled: false
-  annotations:
-    kubernetes.io/ingress.class: nginx
-    kubernetes.io/tls-acme: "true"
-  path: /
-  hosts:
-    - radarr.bananaspliff.org
-  tls:
-   - secretName: radarr-bananaspliff-org
-     hosts:
-       - radarr.bananaspliff.org
-
 volumes:
-  - name: myvolume
+  - name: media-lynott
     persistentVolumeClaim:
-      claimName: myvolume
+      claimName: "media-lynott" # PersistentVolumeClaim created earlier
 
 volumeMounts:
-  - name: myvolume
+  - name: media-lynott
     mountPath: "/config"
-    subPath: "configs/radarr"
-  - name: myvolume
+    subPath: "configs/radarr" # Path /mnt/ssd/media/configs/radarr where radarr writes the configuration
+  - name: media-lynott
     mountPath: "/downloads/transmission"
-    subPath: "downloads/transmission"
-  - name: myvolume
+    subPath: "downloads/transmission" # Path /mnt/ssd/media/downloads/transmission where radarr picks up downloaded movies
+  - name: media-lynott
     mountPath: "/movies"
-    subPath: "medias/movies"
+    subPath: "library/movies" # Path /mnt/ssd/media/library/movies where radarr moves and renames the movies
 
-resources:
-  requests:
-    memory: 128Mi
-    cpu: 0.1
-  limits:
-    memory: 256Mi
-    cpu: 0.5
-
-nodeSelector: {}
-
-tolerations: []
-
-affinity: {}
