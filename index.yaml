@@ -23,15 +23,15 @@ entries:
     urls:
     - https://bpafoshizle.github.io/home-kube-media/radarr-0.1.0.tgz
     version: 0.1.0
-  readarr:
+  sonarr:
   - apiVersion: v1
     appVersion: "1.0"
     created: "2023-06-17T15:06:01.203861-05:00"
-    description: Readarr - an ebook and audiobook collection manager
+    description: Sonarr - Automatic downloader for TV shows  :) 
     digest: e256245f18903b7ce9aa37e223c780ad1a55258d673c4799d86daf2562a42c4b
-    icon: https://bpafoshizle.github.io/home-kube-media/helm/charts/readarr/logo/readarr.png
-    name: readarr
+    icon: https://bpafoshizle.github.io/home-kube-media/helm/charts/sonarr/logo/sonarr.png
+    name: sonarr
     urls:
-    - https://bpafoshizle.github.io/home-kube-media/readarr-0.1.0.tgz
+    - https://bpafoshizle.github.io/home-kube-media/sonarr-0.1.0.tgz
     version: 0.1.0
 generated: "2023-06-17T15:06:01.196742-05:00"

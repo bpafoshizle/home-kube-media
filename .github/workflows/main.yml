@@ -23,23 +23,23 @@ jobs:
           echo github.event_name: ${{ github.event_name }}
           echo github.ref: ${{ github.ref }}
 
-  call-build-and-push-readarr:
-    uses: bpafoshizle/actions/.github/workflows/docker-build-push-ghcr.yml@main
-    with:
-      dockerfile: docker/readarr/Dockerfile
-      platform: 'linux/amd64,linux/arm64'
-      build_dir: docker/readarr
-      image_id: bpafoshizle/home-kube-media/readarr
-    secrets:
-      PACKAGE_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
-
-  call-build-and-push-radar:
+  call-build-and-push-radarr:
     uses: bpafoshizle/actions/.github/workflows/docker-build-push-ghcr.yml@main
     with:
       dockerfile: docker/radarr/Dockerfile
-      platform: 'linux/amd64,linux/arm64'
+      platform: 'linux/arm64'
       build_dir: docker/radarr
       image_id: bpafoshizle/home-kube-media/radarr
+    secrets:
+      PACKAGE_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
+
+  call-build-and-push-sonarr:
+    uses: bpafoshizle/actions/.github/workflows/docker-build-push-ghcr.yml@main
+    with:
+      dockerfile: docker/sonarr/Dockerfile
+      platform: 'linux/arm64'
+      build_dir: docker/sonarr
+      image_id: bpafoshizle/home-kube-media/sonarr
     secrets:
       PACKAGE_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
 
@@ -47,7 +47,7 @@ jobs:
     uses: bpafoshizle/actions/.github/workflows/docker-build-push-ghcr.yml@main
     with:
       dockerfile: docker/prowlarr/Dockerfile
-      platform: 'linux/amd64,linux/arm64'
+      platform: 'linux/arm64'
       build_dir: docker/prowlarr
       image_id: bpafoshizle/home-kube-media/prowlarr
     secrets:

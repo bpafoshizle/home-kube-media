@@ -1,7 +1,7 @@
 helm repo add home-kube-media https://bpafoshizle.github.io/home-kube-media
 helm repo update
 
-helm install readarr home-kube-media/readarr \
-    --values ../kube/media/media.readarr.values.yml \
+helm install sonarr home-kube-media/sonarr \
+    --values ../kube/media/media.sonarr.values.yml \
     --namespace media
 

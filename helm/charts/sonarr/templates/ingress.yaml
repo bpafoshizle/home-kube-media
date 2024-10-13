@@ -1,13 +1,13 @@
 {{- if .Values.ingress.enabled -}}
-{{- $fullName := include "readarr.fullname" . -}}
+{{- $fullName := include "sonarr.fullname" . -}}
 {{- $ingressPath := .Values.ingress.path -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-    app: {{ template "readarr.name" . }}
-    chart: {{ template "readarr.chart" . }}
+    app: {{ template "sonarr.name" . }}
+    chart: {{ template "sonarr.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 {{- with .Values.ingress.annotations }}

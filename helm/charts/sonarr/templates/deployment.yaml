@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "readarr.fullname" . }}
+  name: {{ template "sonarr.fullname" . }}
   labels:
-    app: {{ template "readarr.name" . }}
-    chart: {{ template "readarr.chart" . }}
+    app: {{ template "sonarr.name" . }}
+    chart: {{ template "sonarr.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ template "readarr.name" . }}
+      app: {{ template "sonarr.name" . }}
       release: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app: {{ template "readarr.name" . }}
+        app: {{ template "sonarr.name" . }}
         release: {{ .Release.Name }}
     spec:
     {{- with .Values.imagePullSecrets }}
@@ -33,7 +33,7 @@ spec:
 {{ toYaml .Values.env | indent 12 }}
           ports:
             - name: http
-              containerPort: 8787
+              containerPort: 8989
               protocol: TCP
           volumeMounts:
 {{ toYaml .Values.volumeMounts | indent 12 }}
