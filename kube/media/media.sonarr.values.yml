@@ -2,9 +2,12 @@
 replicaCount: 1
 
 image:
-  repository: linuxserver/sonarr
-  tag: arm64v8-latest # ARM image
-  pullPolicy: IfNotPresent
+  repository: ghcr.io/bpafoshizle/home-kube-media/sonarr
+  tag: latest
+  pullPolicy: Always
+
+imagePullSecrets:
+  - name: ghcr-docker-home-kube-media # https://stackoverflow.com/questions/62901288/how-to-use-imagepullsecrets-in-helm-3
 
 env:
   - name: PUID
