@@ -3,10 +3,10 @@ entries:
   prowlarr:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2024-10-13T11:34:43.406606-05:00"
+    created: "2024-10-14T21:54:46.551031-05:00"
     description: Prowlarr - an indexer manager that integrates seamlessly with Lidarr,
       Mylar3, Radarr, Readarr, and Sonarr
-    digest: 77450446009584abd8739dadd6840d6339bac2c615bcfef8878b2c93b0ef4cbc
+    digest: a25219f3a7762f7e087550018adb7a16986c1e6e880b86ea2ecc8c9e9060e64b
     icon: https://bpafoshizle.github.io/home-kube-media/helm/charts/prowlarr/logo/prowlarr.png
     name: prowlarr
     urls:
@@ -15,9 +15,9 @@ entries:
   radarr:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2024-10-13T11:34:43.406982-05:00"
+    created: "2024-10-14T21:54:46.551455-05:00"
     description: Radarr - Automatic downloader for movies :)
-    digest: 2a5934bcc5e257a213af7969791123151224f21cc2410ec78a031bdd5b921ea4
+    digest: dfb6b68db1da7f31c1404e049110bfad266f86ddd13b152fd63b92abc5ea3d97
     icon: https://bpafoshizle.github.io/home-kube-media/helm/charts/radarr/logo/radarr.png
     name: radarr
     urls:
@@ -26,12 +26,12 @@ entries:
   sonarr:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2024-10-13T11:34:43.408835-05:00"
+    created: "2024-10-14T21:54:46.553268-05:00"
     description: Sonarr - Automatic downloader for TV Shows :)
-    digest: 98ccf04284a9f7c056706302634c09a5b96eed776487702ba402f2a57e86ab94
+    digest: bf9dacf18c85373400c233c2bb7808b09ce2d06320088f8a015a2e884d862921
     icon: https://bpafoshizle.github.io/home-kube-media/helm/charts/sonarr/logo/sonarr.png
     name: sonarr
     urls:
     - https://bpafoshizle.github.io/home-kube-media/sonarr-0.1.0.tgz
     version: 0.1.0
-generated: "2024-10-13T11:34:43.406086-05:00"
+generated: "2024-10-14T21:54:46.550267-05:00"

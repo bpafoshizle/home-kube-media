@@ -19,6 +19,9 @@ service:
   type: ClusterIP
   port: 80
 
+ingress:
+  enabled: false
+
 volumes:
   - name: media-lynott
     persistentVolumeClaim:
@@ -35,3 +38,16 @@ volumeMounts:
     mountPath: "/tv"
     subPath: "library/tv" # Path /mnt/ssd/media/library/tv where sonarr moves and renames the episodes
 
+resources:
+  requests:
+    memory: 128Mi
+    cpu: 0.1
+  limits:
+    memory: 256Mi
+    cpu: 0.5
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
