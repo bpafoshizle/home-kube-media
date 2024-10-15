@@ -19,6 +19,9 @@ service:
   type: ClusterIP
   port: 80
 
+ingress:
+  enabled: false
+
 volumes:
   - name: media-lynott
     persistentVolumeClaim:
@@ -28,3 +31,17 @@ volumeMounts:
   - name: media-lynott
     mountPath: "/config"
     subPath: "configs/prowlarr"
+
+resources:
+  requests:
+    memory: 128Mi
+    cpu: 0.1
+  limits:
+    memory: 256Mi
+    cpu: 0.5
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
